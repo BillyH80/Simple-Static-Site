@@ -1,0 +1,13 @@
+# Site settings
+name: BillyHan.net
+
+# Jekyll Config
+exclude: ['Gemfile', 'Gemfile.lock', '*.scss', 'node_modules', 'gulpfile.js', 'package.json', '.gitignore']
+markdown: kramdown
+
+# Asset Building Config
+assets:
+  css_compressor: sass
+
+sass:
+  sass_dir: _sass

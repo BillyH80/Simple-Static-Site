@@ -1,0 +1,29 @@
+* {box-sizing: border-box}
+html {font-size: 16px}
+
+body {
+	font-family: $text;
+	line-height: 1.4;
+	color: black;
+	background: #DDDDDD;
+	width: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header;
+	font-weight: 500;
+}
+
+/* links */
+a {color: inherit; font-weight: 500}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+img {width: 100%;}

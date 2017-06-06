@@ -1,0 +1,6 @@
+_site/
+.bundle
+.gems
+.jekyll-assets-cache/
+.sass-cache
+node_modules/
