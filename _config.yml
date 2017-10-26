@@ -1,5 +1,5 @@
 # Site settings
-name: BillyHan.net
+name: No Name
 
 # Jekyll Config
 exclude: ['Gemfile', 'Gemfile.lock', '*.scss', 'node_modules', 'gulpfile.js', 'package.json', '.gitignore', 'js/*.js']
