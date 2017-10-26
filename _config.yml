@@ -2,7 +2,7 @@
 name: BillyHan.net
 
 # Jekyll Config
-exclude: ['Gemfile', 'Gemfile.lock', '*.scss', 'node_modules', 'gulpfile.js', 'package.json', '.gitignore']
+exclude: ['Gemfile', 'Gemfile.lock', '*.scss', 'node_modules', 'gulpfile.js', 'package.json', '.gitignore', 'js/*.js']
 markdown: kramdown
 
 # Asset Building Config

@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sync = require('browser-sync');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var prefix = require('gulp-autoprefixer');
 var cp = require('child_process');
@@ -18,10 +19,10 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-	return gulp.src('js/app.js')
+	return gulp.src('./js/*.js')
+	.pipe(concat('scripts.js'))
 	.pipe(uglify())
 	.pipe(rename('scripts.min.js'))
-	.pipe(gulp.dest('js'))
 	.pipe(gulp.dest('_site/js'))
 	.pipe(sync.reload({stream: true}))
 });
@@ -45,11 +46,17 @@ gulp.task('sync', ['jekyll-build'], function() {
 });
 
 gulp.task('watch', function() {
+  gulp.watch(['index.html', '*/*.html', '*/*/*.html', '*/*/*/*.html', '_includes/*.html', '_layouts/*.html', '*.md', '!_site/**', '!_site/*/**'], ['jekyll-rebuild']);
   gulp.watch('_sass/**/*.scss', ['sass']);
   gulp.watch('js/*.js', ['js']);
-  gulp.watch(['index.html', '*/*.html', '*/*/*.html', '*/*/*/*.html', '_includes/*.html', '_layouts/*.html', '*.md', '!_site/**', '!_site/*/**'], ['jekyll-rebuild']);
 });
 
-gulp.task('default', ['sass', 'js'], function() {
+gulp.task('default', ['sass'], function() {
 	gulp.start('sync', 'watch')
+
+	// apparently on first build, jekyll JS compiler will overwrite gulp output to _site
+	// this delays gulp compilation of JS till jekyll has finished compilation
+	setTimeout(function() {
+		gulp.start('js')
+	}, 1500)
 });
