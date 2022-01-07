@@ -1,14 +1,17 @@
 {
-  "name": "bh",
+  "name": "",
   "version": "1.0.0",
-  "description": "BillyHan.net",
+  "description": "",
   "main": "gulpfile.js",
   "devDependencies": {
-    "browser-sync": "^2.18.5",
+    "browser-sync": "^2.18.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "1.2.2",
     "gulp-sass": "^3.0.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-stylelint": "^3.7.0",
+    "gulp-uglify": "^2.0.1"
   }
 }
